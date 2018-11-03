@@ -1,0 +1,679 @@
+[
+    {
+        "key": "group_5bddf5c29687a",
+        "title": "Medicaid",
+        "fields": [
+            {
+                "key": "field_5bddf5cb3544a",
+                "label": "Form Content",
+                "name": "form_content",
+                "type": "wysiwyg",
+                "instructions": "This is displayed above the form that users fill out with email, family members, and salary.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bddf61b3544b",
+                "label": "Lower Bound 1",
+                "name": "lower_bound_1",
+                "type": "text",
+                "instructions": "Lower bound can be set with > or >= depending on if it includes the value. e.g. >=1.25 would be greater than 125% including 125%.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ">=0",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bddf70e3544d",
+                "label": "Upper Bound 1",
+                "name": "upper_bound_1",
+                "type": "text",
+                "instructions": "Upper bound can be set with < or <= depending on if it includes the value. e.g. <=1.25 would be less than 125% including 125%.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "<=1.38",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bddf7663544e",
+                "label": "Content 1",
+                "name": "content_1",
+                "type": "wysiwyg",
+                "instructions": "This appears at the top of the results page.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bddf78b3544f",
+                "label": "Lower Bound 2",
+                "name": "lower_bound_2",
+                "type": "text",
+                "instructions": "Lower bound can be set with > or >= depending on if it includes the value. e.g. >=1.25 would be greater than 125% including 125%.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ">=0",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bddf79835450",
+                "label": "Upper Bound 2",
+                "name": "upper_bound_2",
+                "type": "text",
+                "instructions": "Upper bound can be set with < or <= depending on if it includes the value. e.g. <=1.25 would be less than 125% including 125%.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "<=1.38",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bddf79f35451",
+                "label": "Content 2",
+                "name": "content_2",
+                "type": "wysiwyg",
+                "instructions": "This appears at the top of the results page.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bddf7b035452",
+                "label": "Lower Bound 3",
+                "name": "lower_bound_3",
+                "type": "text",
+                "instructions": "Lower bound can be set with > or >= depending on if it includes the value. e.g. >=1.25 would be greater than 125% including 125%.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ">=0",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bddfc1235455",
+                "label": "Upper Bound 3",
+                "name": "upper_bound_3",
+                "type": "text",
+                "instructions": "Upper bound can be set with < or <= depending on if it includes the value. e.g. <=1.25 would be less than 125% including 125%.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "<=1.38",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bddfc5135457",
+                "label": "Content 3",
+                "name": "content_3",
+                "type": "wysiwyg",
+                "instructions": "This appears at the top of the results page.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bddfc0135453",
+                "label": "Lower Bound 4",
+                "name": "lower_bound_4",
+                "type": "text",
+                "instructions": "Lower bound can be set with > or >= depending on if it includes the value. e.g. >=1.25 would be greater than 125% including 125%.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ">=0",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bddfc1735456",
+                "label": "Upper Bound 4",
+                "name": "upper_bound_4",
+                "type": "text",
+                "instructions": "Upper bound can be set with < or <= depending on if it includes the value. e.g. <=1.25 would be less than 125% including 125%.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "<=1.38",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bddfc6535458",
+                "label": "Content 4",
+                "name": "content_4",
+                "type": "wysiwyg",
+                "instructions": "This appears at the top of the results page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bddfc0b35454",
+                "label": "Lower Bound 5",
+                "name": "lower_bound_5",
+                "type": "text",
+                "instructions": "Lower bound can be set with > or >= depending on if it includes the value. e.g. >=1.25 would be greater than 125% including 125%.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ">=0",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bddfc6935459",
+                "label": "Content 5",
+                "name": "content_5",
+                "type": "wysiwyg",
+                "instructions": "This appears at the top of the results page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "medicaid"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "revisions",
+            "author",
+            "format",
+            "page_attributes",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5bdd985652b7d",
+        "title": "Min Wage",
+        "fields": [
+            {
+                "key": "field_5bdd986e80d5d",
+                "label": "Form Content",
+                "name": "form_content",
+                "type": "wysiwyg",
+                "instructions": "This appears on the page asking for their wage, hours, tipped, and email.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bdd989980d5e",
+                "label": "No Raise Content",
+                "name": "no_raise_content",
+                "type": "wysiwyg",
+                "instructions": "This shows up on the results page at the top if the visitor does not get a raise in any year.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bdd98bc80d5f",
+                "label": "Raise Content",
+                "name": "raise_content",
+                "type": "wysiwyg",
+                "instructions": "This appears on the results page at the top when the user does get a raise.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bddbd9c49340",
+                "label": "Raise Ask",
+                "name": "raise_ask",
+                "type": "wysiwyg",
+                "instructions": "This appears on the results page if they get a raise in any year at the bottom above the donation buttons.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bddbdb049341",
+                "label": "No Raise Ask",
+                "name": "no_raise_ask",
+                "type": "wysiwyg",
+                "instructions": "This appears on the results page at the button before the donate buttons if they do not get a raise.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5bdd990780d60",
+                "label": "Starting Date",
+                "name": "starting_date",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "F j",
+                "return_format": "F j",
+                "first_day": 1
+            },
+            {
+                "key": "field_5bdd996b80d61",
+                "label": "2019 Tipped",
+                "name": "2019_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5bdd9bc717aec",
+                "label": "2020 Tipped",
+                "name": "2020_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5bdd9c0417aef",
+                "label": "2021 Tipped",
+                "name": "2021_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5bdd9c1117af0",
+                "label": "2022 Tipped",
+                "name": "2022_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5bdd9c2b17af1",
+                "label": "2023 Tipped",
+                "name": "2023_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5bdd999e80d62",
+                "label": "2019 Not Tipped",
+                "name": "2019_not_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5bdd9be217aed",
+                "label": "2020 Not Tipped",
+                "name": "2020_not_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5bdd9bf517aee",
+                "label": "2021 Not Tipped",
+                "name": "2021_not_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5bdd9c3c17af2",
+                "label": "2022 Not Tipped",
+                "name": "2022_not_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5bdd9c6517af3",
+                "label": "2023 Not Tipped",
+                "name": "2023_not_tipped",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 0,
+                "max": "",
+                "step": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "minwage"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "revisions",
+            "author",
+            "format",
+            "page_attributes",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": 1,
+        "description": ""
+    }
+]
