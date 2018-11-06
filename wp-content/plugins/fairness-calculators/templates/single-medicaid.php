@@ -6,7 +6,7 @@
  */
 
  function matchesBound($bound, $income, $family_bracket) {
-   preg_match('/(>=?|<=?)(\d\.?\d?)/', $bound, $matches);
+   preg_match('/(>=?|<=?)(\d\.?\d*)/', $bound, $matches);
    $bound_value = floatval($matches[2]);
    $bound_salary_limit = $bound_value * $family_bracket;
    if ($matches[1] == '>') {
