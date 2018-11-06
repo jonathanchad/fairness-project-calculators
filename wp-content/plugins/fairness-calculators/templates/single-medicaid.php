@@ -52,6 +52,8 @@
         $family_size = intval($_POST['family-size']);
         $email = $_POST['email'];
 
+        $mail = wp_mail($email, 'Medicaid results from the Fairness Project', 'Hey');
+        echo $mail;
         // These are the federal poverty levels
         // The key is the number of family members, the value is a dollar value
         $poverty_table = array(
@@ -131,6 +133,9 @@
                   <li class="mb-2"> <span class="mr-2">🏥</span><span>Free or low-cost access to physicians, hospitals, and life saving therapies</span></li>
                   <li class="mb-2"> <span class="mr-2">💊</span><span>Affordable prescription drug coverage</span></li>
                 </ul>
+
+                <i class="small text-muted">This is not a formal eligibility determination. Your eligibility results may vary depending on your citizenship status, income, family size and other factors at the time you fill out an application with the state of Idaho.</i>
+
                 <h2 class="callout-font mt-5 text-center">Unfortunately millions of Americans have yet to recieve these benefits</h2>
                 <p class="mb-4">A monthly donation to The Fairness Project will help us fight to expand health care in your community and for the nearly 30 million Americans who are uninsured.</p>
               </div>

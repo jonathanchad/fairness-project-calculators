@@ -68,7 +68,6 @@
           'old_total' => $old_total
         );
       }
-      // TODO: Your salary should not start until
       function getTotal($total, $entry)
       {
           $total += $entry['yearly_diff'];
@@ -78,8 +77,8 @@
       // TODO: Send email to BlueStateDigitalTools
       $total = array_reduce($salaryObj, 'getTotal', 0);
       $montly = $salaryObj[$raise_year]['yearly_diff'] / 12; // Divide total by number of mounths and number of years
-      $montlyFormatted = money_format('%i', $montly); // Format to USD
-      $totalFormatted = money_format('%i', $total); // Format to USD
+      $montlyFormatted = money_format('%.2n', $montly); // Format to USD
+      $totalFormatted = money_format('%.2n', $total); // Format to USD
       $content = $total > 0 ? get_field('raise_content') : get_field('no_raise_content');
       $ask = $total > 0 ? get_field('raise_ask') : get_field('no_raise_ask'); ?>
       <script type="text/javascript">
@@ -95,8 +94,8 @@
               </div>
               <?php if ($total > 0) { // Do not show chart if there is no raise ?>
                 <div class="highlight text-center">
-                  <h2 class="h1 mb-0 callout-font mt-1">$<?php echo $totalFormatted; ?> total</h2>
-                  <p class="mb-0">which is <strong>$<?php echo $montlyFormatted; ?></strong> more per month!</p>
+                  <h2 class="h1 mb-0 callout-font mt-1"><?php echo $totalFormatted; ?> total</h2>
+                  <p class="mb-0">which is <strong><?php echo $montlyFormatted; ?></strong> more per month!</p>
                 </div>
                 <div class="text-center mt-3">
                   <p>Starting on <?php the_field('starting_date'); ?>, <?php echo $raise_year; ?> your wage will see its first increase settling in at <strong>$<?php echo $first_raise; ?>/hr.</strong></p>

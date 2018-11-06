@@ -6,7 +6,7 @@ services:
     container_name: $WORDPRESS_CONTAINER_NAME
     depends_on:
       - mysql
-    image: wordpress:4.9.4
+    image: wordpress:4.9.8-php7.0
     volumes:
       - ./wp-content/plugins:/var/www/html/wp-content/plugins
     ports:
