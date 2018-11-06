@@ -6,6 +6,9 @@ window.onload = function () {
   const salaryData = labels.map((key) => (chartObj[key].yearly_total));
   const oldSalaryData = labels.map((key) => (chartObj[key].old_total));
 
+  const dataset = [...salaryData, ...oldSalaryData].filter((n)=>(n));
+  const minStep = Math.round(Math.min(...dataset)/1000) * 1000 - 1000;
+
   var myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -53,13 +56,14 @@ window.onload = function () {
               labelString: 'Yearly Salary'
             },
             ticks: {
-              beginAtZero: false
+              beginAtZero: false,
+              min: minStep,
             }
           }
         ]
       },
       maintainAspectRatio: false,
-      responsive: true
+      responsive: true,
     }
   });
 }

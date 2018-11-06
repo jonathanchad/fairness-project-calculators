@@ -59,16 +59,16 @@
       $salaryObj = array();
       foreach ($min_wages as $year => $value) {
           $dif = $value > $wage ? $value - $wage : 0;
-          $yearly_diff = $dif * 52 * $hours;
-          $yearly = $value * 52 * $hours;
+          $yearly_diff = $dif > 0 ? $dif * 52 * $hours : null;
           $old_total = $wage * 52 * $hours;
+          $yearly = $dif > 0 ? $value * 52 * $hours : $old_total;
           $salaryObj[$year] = array(
           'yearly_diff' => $yearly_diff,
           'yearly_total' => $yearly,
           'old_total' => $old_total
         );
       }
-
+      // TODO: Your salary should not start until
       function getTotal($total, $entry)
       {
           $total += $entry['yearly_diff'];
@@ -77,7 +77,7 @@
 
       // TODO: Send email to BlueStateDigitalTools
       $total = array_reduce($salaryObj, 'getTotal', 0);
-      $montly = $total / 12 / count($salaryObj); // Divide total by number of mounths and number of years
+      $montly = $salaryObj[$raise_year]['yearly_diff'] / 12; // Divide total by number of mounths and number of years
       $montlyFormatted = money_format('%i', $montly); // Format to USD
       $totalFormatted = money_format('%i', $total); // Format to USD
       $content = $total > 0 ? get_field('raise_content') : get_field('no_raise_content');
