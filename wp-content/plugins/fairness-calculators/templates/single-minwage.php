@@ -17,6 +17,23 @@
   	<meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>">
   	<link rel="profile" href="http://gmpg.org/xfn/11">
   	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1955212671236808');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1955212671236808&ev=PageView&noscript=1"
+    /></noscript>
+
   	<?php wp_head(); ?>
   </head>
 
@@ -54,7 +71,7 @@
       // This loop just grabs those two values above and then exits
       foreach ($min_wages as $year => $value) {
           if ($value > $wage) {
-              $first_raise = $value;
+              $first_raise = money_format('%.2n', $value);
               $raise_year = $year;
               break;
           }
@@ -78,7 +95,6 @@
           return $total;
       }
 
-      // TODO: Send email to BlueStateDigitalTools
       $total = array_reduce($salaryObj, 'getTotal', 0);
       $monthly = $salaryObj[$raise_year]['yearly_diff'] / 12; // Divide total by number of mounths and number of years
       $monthlyFormatted = money_format('%.2n', $monthly); // Format to USD
@@ -132,7 +148,7 @@
                   <p class="mb-0">which is <strong><?php echo $monthlyFormatted; ?></strong> more per month!</p>
                 </div>
                 <div class="text-center mt-3">
-                  <p>Starting on <?php the_field('starting_date'); ?>, <?php echo $raise_year; ?> your wage will see its first increase settling in at <strong>$<?php echo $first_raise; ?>/hr.</strong></p>
+                  <p>Starting on <?php the_field('starting_date'); ?>, <?php echo $raise_year; ?> your wage will see its first increase settling in at <strong><?php echo $first_raise; ?>/hr.</strong></p>
                 </div>
                 <div style="max-height: 300px">
                   <canvas id="myChart" width="400" height="300"></canvas>
@@ -248,10 +264,16 @@
                           placeholder="Your email address"
                           required
                         >
-                        <small class="form-text text-muted" id="emailHelp">So we can send you a copy of your results and Medicaid updates for <?php the_title(); ?></small>
+                        <small class="form-text text-muted" id="emailHelp">So we can send you a copy of your results and minimum wage updates for <?php the_title(); ?></small>
                       </div>
                       <div class="text-center">
-                        <button class="btn btn-primary" type="submit">CALCULATE MY PAY RAISE</button>
+                        <button
+                          class="btn btn-primary"
+                          type="submit"
+                          onclick="fbq('track', 'Lead');"
+                        >
+                          CALCULATE MY PAY RAISE
+                        </button>
                       </div>
                       <?php wp_nonce_field('min-wage'); ?>
                     </form>

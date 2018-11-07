@@ -20,7 +20,7 @@ window.onload = function () {
           borderColor: "#52a7c6",
           fill: false,
           data: salaryData,
-          borderWidth: 3
+          borderWidth: 3,
         }, {
           label: 'Your old salary',
           backgroundColor: "#69696b",
@@ -32,6 +32,11 @@ window.onload = function () {
       ]
     },
     options: {
+      elements: {
+        line: {
+          tension: 0,
+        }
+      },
       layout: {
         padding: {
           top: 10,

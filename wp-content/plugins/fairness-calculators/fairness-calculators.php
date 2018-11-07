@@ -115,7 +115,7 @@ function medicaid_template($content, $ask) {
   $template .= '    <li class="mb-2"> <span class="mr-2">🏥</span><span>Free or low-cost access to physicians, hospitals, and life saving therapies</span></li>';
   $template .= '    <li class="mb-2"> <span class="mr-2">💊</span><span>Affordable prescription drug coverage</span></li>';
   $template .= '  </ul>';
-  $template .= '  <i class="small text-muted">This is not a formal eligibility determination. Your eligibility results may vary depending on your citizenship status, income, family size and other factors at the time you fill out an application with the state of Idaho.</i>';
+  $template .= '  <i class="small text-muted">This is not a formal eligibility determination. Your eligibility results may vary depending on your citizenship status, income, family size and other factors at the time you fill out an application with the state.</i>';
   $template .= '</div>';
   return $template;
 }
@@ -127,7 +127,7 @@ function send_medicaid_email($email, $template, $state, $income, $family_size) {
   $body .= $template;
 
   $headers = array('Content-Type: text/html; charset=UTF-8');
-
+  $headers[] = 'From: The Fairness Project <noreply@thefairnessproject.org>';
   $mail = wp_mail(
     $email,
     $subject,
@@ -152,6 +152,7 @@ function send_minwage_email($params) {
   }
 
   $headers = array('Content-Type: text/html; charset=UTF-8');
+  $headers[] = 'From: The Fairness Project <noreply@thefairnessproject.org>';
 
   $mail = wp_mail(
     $params['email'],
