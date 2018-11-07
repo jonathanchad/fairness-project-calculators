@@ -7,7 +7,7 @@ window.onload = function () {
   const oldSalaryData = labels.map((key) => (chartObj[key].old_total));
 
   const dataset = [...salaryData, ...oldSalaryData].filter((n)=>(n));
-  const minStep = Math.round(Math.min(...dataset)/1000) * 1000 - 1000;
+  const minStep = Math.max(Math.round(Math.min(...dataset)/1000) * 1000 - 1000, 0);
 
   var myChart = new Chart(ctx, {
     type: 'line',

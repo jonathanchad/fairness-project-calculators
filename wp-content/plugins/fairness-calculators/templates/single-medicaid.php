@@ -50,7 +50,6 @@
         // Submitted values
         $income = $_POST['income'] ? intval($_POST['income']) : intval($_GET['income']);
         $family_size = $_POST['family-size'] ? intval($_POST['family-size']) : intval($_GET['family_size']);
-        $email = $_POST['email'] ? sanitize_email($_POST['email']) : null;
 
         // These are the federal poverty levels
         // The key is the number of family members, the value is a dollar value
@@ -118,8 +117,8 @@
 
         $template = medicaid_template($content, $ask);
 
-        if ($email) {
-
+        if ($_POST['email']) {
+          $email = $_POST['email'] ? sanitize_email($_POST['email']) : null;
           // TODO: Handle request errors
           $data = array( 'email' => $email, 'custom-4474' => $income );
           post_to_bsd($data); // Sends data to BSD
@@ -173,7 +172,6 @@
               <div class="text-center">
                 <?php the_field('form_content'); ?>
 
-                <p>To find out if you qualify, answer the following 3 simple questions:</p>
                 <div class="card border-0 bg-light">
                   <div class="card-body text-left">
                     <form name="medicaid" method="post" action="">

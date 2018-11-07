@@ -136,6 +136,31 @@ function send_medicaid_email($email, $template, $state, $income, $family_size) {
   );
 }
 
+function send_minwage_email($params) {
+  // Sends email to visitor
+  $subject = 'Calculate your raise report | The Fairness Project';
+  $body = 'Thanks for signing up. <a href="https://thefairnessproject.org/min-wage/'.$params['state'].'?wage='.$params['wage'].'&tipped='.$params['tipped'].'&hours='.$params['hours'].'">Here</a> is a link to your report page. <br>';
+  $body .= $params['content'];
+  if ($params['total'] > 0) {
+    $body .=  '<div class="highlight text-center">';
+    $body .=  '  <h2 class="h1 mb-0 callout-font mt-1">' . $params['totalFormatted'] . ' total</h2>';
+    $body .=  '  <p class="mb-0">which is <strong>'. $params['monthlyFormatted'] . '</strong> more per month!</p>';
+    $body .=  '</div>';
+    $body .=  '<div class="text-center mt-3">';
+    $body .=  '  <p>Starting on ' . $params['starting_date'] . ', ' . $params['raise_year']. ' your wage will see its first increase settling in at <strong>$' . $params['first_raise'] . '/hr.</strong></p>';
+    $body .=  '</div>';
+  }
+
+  $headers = array('Content-Type: text/html; charset=UTF-8');
+
+  $mail = wp_mail(
+    $params['email'],
+    $subject,
+    $body,
+    $headers
+  );
+}
+
 if( function_exists('acf_add_local_field_group') ){
 
 acf_add_local_field_group(array(

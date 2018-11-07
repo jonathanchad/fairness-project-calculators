@@ -35,7 +35,7 @@
       if ($_GET['tipped']) {
         $wage_type = $_GET['tipped'] == 'yes' ? 'tipped' : 'not_tipped';
       }
-      $hours = $_POST['hours'] ? intval($_POST['hours']) : intval(['hours']);
+      $hours = $_POST['hours'] ? intval($_POST['hours']) : intval($_GET['hours']);
 
       $email = sanitize_email($_POST['email']);
 
@@ -80,11 +80,41 @@
 
       // TODO: Send email to BlueStateDigitalTools
       $total = array_reduce($salaryObj, 'getTotal', 0);
-      $montly = $salaryObj[$raise_year]['yearly_diff'] / 12; // Divide total by number of mounths and number of years
-      $montlyFormatted = money_format('%.2n', $montly); // Format to USD
+      $monthly = $salaryObj[$raise_year]['yearly_diff'] / 12; // Divide total by number of mounths and number of years
+      $monthlyFormatted = money_format('%.2n', $monthly); // Format to USD
       $totalFormatted = money_format('%.2n', $total); // Format to USD
       $content = $total > 0 ? get_field('raise_content') : get_field('no_raise_content');
-      $ask = $total > 0 ? get_field('raise_ask') : get_field('no_raise_ask'); ?>
+      $ask = $total > 0 ? get_field('raise_ask') : get_field('no_raise_ask');
+
+      $impacted = get_field('impacted');
+      $donation_string = 'https://secure.actblue.com/donate/fairness-monthly?impacted='.$impacted.'&state='.get_the_title();
+
+      if ($_POST['email']) {
+        $email = $_POST['email'] ? sanitize_email($_POST['email']) : null;
+        // TODO: Handle request errors
+        $data = array( 'email' => $email, 'custom-4475' => $wage, 'custom-4476' => $hours, 'custom-4477' => $tipped );
+        post_to_bsd($data); // Sends data to BSD
+
+        $params = array(
+          'email' => $email,
+          'content' => $content,
+          'state' => get_the_title(),
+          'wage' => $wage,
+          'tipped' => $_POST['tipped'],
+          'hours' => $hours,
+          'total' => $total,
+          'totalFormatted' => $totalFormatted,
+          'monthlyFormatted' => $monthlyFormatted,
+          'starting_date' => get_field('starting_date'),
+          'raise_year' => $raise_year,
+          'first_raise' => $first_raise,
+        );
+
+        send_minwage_email($params);
+      }
+
+      ?>
+
       <script type="text/javascript">
         window.chartObj = <?php echo json_encode($salaryObj); ?>;
       </script>
@@ -99,7 +129,7 @@
               <?php if ($total > 0) { // Do not show chart if there is no raise ?>
                 <div class="highlight text-center">
                   <h2 class="h1 mb-0 callout-font mt-1"><?php echo $totalFormatted; ?> total</h2>
-                  <p class="mb-0">which is <strong><?php echo $montlyFormatted; ?></strong> more per month!</p>
+                  <p class="mb-0">which is <strong><?php echo $monthlyFormatted; ?></strong> more per month!</p>
                 </div>
                 <div class="text-center mt-3">
                   <p>Starting on <?php the_field('starting_date'); ?>, <?php echo $raise_year; ?> your wage will see its first increase settling in at <strong>$<?php echo $first_raise; ?>/hr.</strong></p>
@@ -130,10 +160,7 @@
     <footer class="bg-dark text-light">
       <div class="container py-5">
         <div class="text-center mb-4"><a href="/"><img class="img-fluid mx-auto" src="https://www.thefairnessproject.org/wp-content/themes/fp/assets/img/logo-white.png" style="max-width: 300px"></a></div>
-        <p>
-          <p>For 3 years, we’ve fought state-by-state to raise the minimum wage using ballot initiatives. Our strategy is working we've won more than $6.1 billion in pay increases for working people.</p>
-          <p>For the price of just your morning cup of coffee, we can expand our fight and raise wages for millions more. Can you step up and make a monthly donation to fuel our work?</p>
-        </p>
+        <p>In the last two years, we've worked state-by-state to increase the minimum wage for nearly 9 million people. We've won more than $6 billion in pay increases for working people and their families. For the price of a cup of coffee, you can help us expand this effort and raise the wages of millions more people. Can you step up and make a monthly donation to fuel this work to change people's lives?</p>
       </div>
     </footer>
     <?php
@@ -145,11 +172,9 @@
           <div class="card main-content">
             <div class="card-body px-md-5 pb-md-5 pt-md-5">
               <div class="text-center">
-                <h1 class="callout-font">Calculate your raise</h1>
 
                 <?php the_field('form_content'); ?>
 
-                <p>To find out how your paycheck might change, answer the following 4 simple questions:</p>
                 <div class="card border-0 bg-light">
                   <div class="card-body text-left">
                     <form name="calculate" method="post" action="">
@@ -158,7 +183,15 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                           </div>
-                          <input class="form-control" name="wage" id="min-wage-hourly" type="number" step="0.01" placeholder="Your hourly wage in Dollars">
+                          <input
+                            class="form-control"
+                            name="wage"
+                            id="min-wage-hourly"
+                            type="number"
+                            step="0.01"
+                            placeholder="Your hourly wage in dollars"
+                            required
+                          >
                         </div>
                       </div>
                       <div class="form-group"><label for="min-wage-tips">Do you receive tips as part of your job?</label>
@@ -166,17 +199,25 @@
                           <div class="form-check form-check-inline">
                             <input
                               class="form-check-input"
-                              id="min-wage-tip-1"
+                              id="tipped-1"
                               type="radio"
                               name="tipped"
                               value="yes"
+                              required
                             >
                               <label class="form-check-label" for="tipped-1">
                                 Yes
                               </label>
                             </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="tipped-2" type="radio" name="tipped" value="no">
+                            <input
+                              class="form-check-input"
+                              id="tipped-2"
+                              type="radio"
+                              name="tipped"
+                              value="no"
+                              required
+                            >
                               <label class="form-check-label" for="tipped-2">
                                 No
                               </label>
@@ -186,7 +227,15 @@
                       <div class="form-group">
                         <label for="min-wage-hourly">How many hours per week do you normally work? </label>
                         <div class="input-group">
-                          <input class="form-control" id="min-wage-hourly" type="number" name="hours" step="1" placeholder="Number of hours worked in a typical week">
+                          <input
+                            class="form-control"
+                            id="min-wage-hourly"
+                            type="number"
+                            name="hours"
+                            step="1"
+                            placeholder="Number of hours worked in a typical week"
+                            required
+                          >
                           <div class="input-group-append"><span class="input-group-text">hours</span></div>
                         </div>
                       </div>
@@ -199,9 +248,11 @@
                           placeholder="Your email address"
                           required
                         >
-                        <small class="form-text text-muted" id="emailHelp">So we can send you a copy of your results and Medicaid updates for Utah</small>
+                        <small class="form-text text-muted" id="emailHelp">So we can send you a copy of your results and Medicaid updates for <?php the_title(); ?></small>
                       </div>
-                      <button class="btn btn-primary" type="submit">Submit</button>
+                      <div class="text-center">
+                        <button class="btn btn-primary" type="submit">CALCULATE MY PAY RAISE</button>
+                      </div>
                       <?php wp_nonce_field('min-wage'); ?>
                     </form>
                   </div>
