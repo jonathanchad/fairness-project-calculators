@@ -160,7 +160,13 @@
                       <div class="form-group"><label for="min-wage-tips">Do you receive tips as part of your job?</label>
                         <div class="pl-4" id="min-wage-tips">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="min-wage-tip-1" type="radio" name="tipped" value="yes">
+                            <input
+                              class="form-check-input"
+                              id="min-wage-tip-1"
+                              type="radio"
+                              name="tipped"
+                              value="yes"
+                            >
                               <label class="form-check-label" for="tipped-1">
                                 Yes
                               </label>
@@ -181,7 +187,14 @@
                         </div>
                       </div>
                       <div class="form-group"><label for="medicaide-family-size">Whats your email address?</label>
-                        <input class="form-control" id="medicaide-family-size" type="email" name="email" placeholder="Your email address">
+                        <input
+                          class="form-control"
+                          id="medicaide-family-size"
+                          type="email"
+                          name="email"
+                          placeholder="Your email address"
+                          required
+                        >
                         <small class="form-text text-muted" id="emailHelp">So we can send you a copy of your results and Medicaid updates for Utah</small>
                       </div>
                       <button class="btn btn-primary" type="submit">Submit</button>

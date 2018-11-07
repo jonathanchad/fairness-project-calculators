@@ -87,7 +87,56 @@ function fmw_enqueue_page_template_styles()
   }
 }
 
-if( function_exists('acf_add_local_field_group') ):
+function post_to_bsd($data) {
+  $url = 'https://fairness.cp.bsd.net/page/sapi/calculators';
+
+  $response = wp_remote_post( $url, array(
+    'method' => 'POST',
+    'timeout' => 45,
+    'redirection' => 5,
+    'httpversion' => '1.0',
+    'blocking' => true,
+    'headers' => array(
+
+    ),
+    'body' => $data,
+  ));
+}
+
+function medicaid_template($content, $ask) {
+  $template = ' <div class="text-center">';
+  $template .= $content;
+  $template .= ' </div>';
+  $template .= ' <div class="text-left">';
+  $template .=   $ask;
+  $template .= '  <p>The medicaid expansion benefits will include:</p>';
+  $template .= '  <ul class="list-unstyled px-2">';
+  $template .= '    <li class="mb-2"><span class="mr-2">💉</span><span>Free preventive care, mammograms, flu shots, and physicals</span></li>';
+  $template .= '    <li class="mb-2"> <span class="mr-2">🏥</span><span>Free or low-cost access to physicians, hospitals, and life saving therapies</span></li>';
+  $template .= '    <li class="mb-2"> <span class="mr-2">💊</span><span>Affordable prescription drug coverage</span></li>';
+  $template .= '  </ul>';
+  $template .= '  <i class="small text-muted">This is not a formal eligibility determination. Your eligibility results may vary depending on your citizenship status, income, family size and other factors at the time you fill out an application with the state of Idaho.</i>';
+  $template .= '</div>';
+  return $template;
+}
+
+function send_medicaid_email($email, $template, $state, $income, $family_size) {
+  // Sends email to visitor
+  $subject = 'Medicaid eligibility report | The Fairness Project';
+  $body = 'Thanks for signing up. <a href="https://thefairnessproject.org/medicaid/'.$state.'?income='.$income.'&family_size='.$family_size.'">Here</a> is a link to your report page. <br>';
+  $body .= $template;
+
+  $headers = array('Content-Type: text/html; charset=UTF-8');
+
+  $mail = wp_mail(
+    $email,
+    $subject,
+    $body,
+    $headers
+  );
+}
+
+if( function_exists('acf_add_local_field_group') ){
 
 acf_add_local_field_group(array(
 	'key' => 'group_5bddf5c29687a',
@@ -768,4 +817,4 @@ acf_add_local_field_group(array(
 	'description' => '',
 ));
 
-endif;
+}
