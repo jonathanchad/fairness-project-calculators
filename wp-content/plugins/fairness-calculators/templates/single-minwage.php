@@ -28,12 +28,16 @@
 
     <?php
     // If someone submitted the form, it will hit the single post
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' || ($_GET['wage'] && $_GET['tipped'] && $_GET['hours']) ) {
       // Submitted values
-      $wage = floatval($_POST['wage']);
+      $wage = $_POST['wage'] ? floatval($_POST['wage']) : floatval($_GET['wage']);
       $wage_type = $_POST['tipped'] == 'yes' ? 'tipped' : 'not_tipped';
-      $hours = intval($_POST['hours']);
-      $email = $_POST['email'];
+      if ($_GET['tipped']) {
+        $wage_type = $_GET['tipped'] == 'yes' ? 'tipped' : 'not_tipped';
+      }
+      $hours = $_POST['hours'] ? intval($_POST['hours']) : intval(['hours']);
+
+      $email = sanitize_email($_POST['email']);
 
       // Grabs each value from db and parses it to a float
       $min_wages = array(
@@ -110,11 +114,11 @@
               <div class="card border-0">
                 <div class="card-body px-2 py-3 bg-special"><small class="d-block text-center mb-3 font-italic">If you’re logged in as an ActBlue Express user, your contribution will process immediately:</small>
                   <div class="d-flex flex-wrap">
-                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="#">Donate $5 per month</a></div>
-                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="#">Donate $10 per month</a></div>
-                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="#">Donate $25 per month</a></div>
-                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="#">Or donate any other amount</a></div>
-                    <div class="col-12 text-center"><a class="text-muted" href="#">I'd like to make a one time donation</a></div>
+                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=5">Donate $5 per month</a></div>
+                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=10">Donate $10 per month</a></div>
+                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=25">Donate $25 per month</a></div>
+                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1">Or donate any other amount</a></div>
+                    <div class="col-12 text-center"><a class="text-muted" href="<?php echo $donation_string; ?>">I'd like to make a one time donation</a></div>
                   </div>
                 </div>
               </div>
