@@ -64,7 +64,7 @@
     <?php
     // Grabbing source param to pass through to act blue forms
     // Thanks to our post action being blank, it submits it to a page that keeps the source param
-    $ref_code = $_GET['source'];
+    $refcode = $_GET['source'];
     // If someone submitted the form, it will hit the single post
     if ($_SERVER['REQUEST_METHOD'] == 'POST' || ($_GET['income'] && $_GET['family_size'])) {
         // Submitted values
@@ -133,9 +133,9 @@
         $content = get_field('content_' . $content_number);
         $impacted = get_field('impacted');
 
-        $ref_code_string = $ref_code ? '&ref_code='.$ref_code : '';
+        $refcode_string = $refcode ? '&refcode='.$refcode : '';
 
-        $donation_string = 'https://secure.actblue.com/donate/fairness-monthly?express_lane=true&impacted='.$impacted.'&state='.get_the_title() . $ref_code_string;
+        $donation_string = 'https://secure.actblue.com/donate/fairness-monthly?express_lane=true&impacted='.$impacted.'&state='.get_the_title() . $refcode_string;
 
         $template = medicaid_template($content, $ask);
 
@@ -145,11 +145,11 @@
           $data = array(
             'email' => $email,
             'custom-4474' => $income,
-            'custom-4478' => $ref_code,
+            'custom-4478' => $refcode,
           );
           post_to_bsd($data); // Sends data to BSD
 
-          send_medicaid_email($email, $template, get_the_title(), $income, $family_size, $ref_code);
+          send_medicaid_email($email, $template, get_the_title(), $income, $family_size, $refcode);
         }
       ?>
 

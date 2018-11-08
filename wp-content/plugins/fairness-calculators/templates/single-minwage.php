@@ -46,7 +46,7 @@
     <?php
     // Grabbing source param to pass through to act blue forms
     // Thanks to our post action being blank, it submits it to a page that keeps the source param
-    $ref_code = $_GET['source'];
+    $refcode = $_GET['source'];
     // If someone submitted the form, it will hit the single post
     if ($_SERVER['REQUEST_METHOD'] == 'POST' || ($_GET['wage'] && $_GET['tipped'] && $_GET['hours']) ) {
       // Submitted values
@@ -107,9 +107,9 @@
 
       $impacted = get_field('impacted');
 
-      $ref_code_string = $ref_code ? '&ref_code='.$ref_code : '';
+      $refcode_string = $refcode ? '&refcode='.$refcode : '';
 
-      $donation_string = 'https://secure.actblue.com/donate/fairness-monthly-minimum-wage?express_lane=true&impacted='.$impacted.'&state='.get_the_title().$ref_code_string;
+      $donation_string = 'https://secure.actblue.com/donate/fairness-monthly-minimum-wage?express_lane=true&impacted='.$impacted.'&state='.get_the_title().$refcode_string;
 
       if ($_POST['email']) {
         $email = $_POST['email'] ? sanitize_email($_POST['email']) : null;
@@ -119,7 +119,7 @@
           'custom-4475' => $wage,
           'custom-4476' => $hours,
           'custom-4477' => $tipped,
-          'custom-4478' => $ref_code,
+          'custom-4478' => $refcode,
         );
         post_to_bsd($data); // Sends data to BSD
 
@@ -136,7 +136,7 @@
           'starting_date' => get_field('starting_date'),
           'raise_year' => $raise_year,
           'first_raise' => $first_raise,
-          'ref_code' => $ref_code,
+          'refcode' => $refcode,
         );
 
         send_minwage_email($params);
