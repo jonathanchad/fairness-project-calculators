@@ -62,12 +62,14 @@
   	<?php while (have_posts()) : the_post(); ?>
 
     <?php
+    // Grabbing source param to pass through to act blue forms
+    // Thanks to our post action being blank, it submits it to a page that keeps the source param
+    $ref_code = $_GET['source'];
     // If someone submitted the form, it will hit the single post
     if ($_SERVER['REQUEST_METHOD'] == 'POST' || ($_GET['income'] && $_GET['family_size'])) {
         // Submitted values
         $income = $_POST['income'] ? intval($_POST['income']) : intval($_GET['income']);
         $family_size = $_POST['family-size'] ? intval($_POST['family-size']) : intval($_GET['family_size']);
-
         // These are the federal poverty levels
         // The key is the number of family members, the value is a dollar value
         $poverty_table = array(
@@ -130,7 +132,10 @@
 
         $content = get_field('content_' . $content_number);
         $impacted = get_field('impacted');
-        $donation_string = 'https://secure.actblue.com/donate/fairness-monthly?express_lane=true&impacted='.$impacted.'&state='.get_the_title();
+
+        $ref_code_string = $ref_code ? '&ref_code='.$ref_code : '';
+
+        $donation_string = 'https://secure.actblue.com/donate/fairness-monthly?express_lane=true&impacted='.$impacted.'&state='.get_the_title() . $ref_code_string;
 
         $template = medicaid_template($content, $ask);
 
@@ -140,7 +145,7 @@
           $data = array( 'email' => $email, 'custom-4474' => $income );
           post_to_bsd($data); // Sends data to BSD
 
-          send_medicaid_email($email, $template, get_the_title(), $income, $family_size);
+          send_medicaid_email($email, $template, get_the_title(), $income, $family_size, $ref_code);
         }
       ?>
 
