@@ -130,7 +130,7 @@
 
         $content = get_field('content_' . $content_number);
         $impacted = get_field('impacted');
-        $donation_string = 'https://secure.actblue.com/donate/fairness-monthly?impacted='.$impacted.'&state='.get_the_title();
+        $donation_string = 'https://secure.actblue.com/donate/fairness-monthly?express_lane=true&impacted='.$impacted.'&state='.get_the_title();
 
         $template = medicaid_template($content, $ask);
 

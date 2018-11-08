@@ -103,7 +103,7 @@
       $ask = $total > 0 ? get_field('raise_ask') : get_field('no_raise_ask');
 
       $impacted = get_field('impacted');
-      $donation_string = 'https://secure.actblue.com/donate/fairness-monthly?impacted='.$impacted.'&state='.get_the_title();
+      $donation_string = 'https://secure.actblue.com/donate/fairness-monthly-minimum-wage?express_lane=true&impacted='.$impacted.'&state='.get_the_title();
 
       if ($_POST['email']) {
         $email = $_POST['email'] ? sanitize_email($_POST['email']) : null;
