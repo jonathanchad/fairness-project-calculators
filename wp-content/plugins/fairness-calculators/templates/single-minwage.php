@@ -114,7 +114,13 @@
       if ($_POST['email']) {
         $email = $_POST['email'] ? sanitize_email($_POST['email']) : null;
         // TODO: Handle request errors
-        $data = array( 'email' => $email, 'custom-4475' => $wage, 'custom-4476' => $hours, 'custom-4477' => $tipped );
+        $data = array(
+          'email' => $email,
+          'custom-4475' => $wage,
+          'custom-4476' => $hours,
+          'custom-4477' => $tipped,
+          'custom-4478' => $ref_code,
+        );
         post_to_bsd($data); // Sends data to BSD
 
         $params = array(

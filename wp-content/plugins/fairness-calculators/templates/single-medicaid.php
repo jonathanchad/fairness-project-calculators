@@ -142,7 +142,11 @@
         if ($_POST['email']) {
           $email = $_POST['email'] ? sanitize_email($_POST['email']) : null;
           // TODO: Handle request errors
-          $data = array( 'email' => $email, 'custom-4474' => $income );
+          $data = array(
+            'email' => $email,
+            'custom-4474' => $income,
+            'custom-4478' => $ref_code,
+          );
           post_to_bsd($data); // Sends data to BSD
 
           send_medicaid_email($email, $template, get_the_title(), $income, $family_size, $ref_code);
