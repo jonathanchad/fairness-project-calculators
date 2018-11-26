@@ -216,6 +216,7 @@
                             placeholder="Annual income in Dollars"
                             required
                           >
+                          <small class="form-text text-muted" id="medicaide-incomeHelp">Please use numbers only, do not include commas</small>
                         </div>
                       </div>
                       <div class="form-group">
@@ -228,19 +229,19 @@
                           placeholder="Number of people in your family"
                           required
                         >
-                        <small class="form-text text-muted" id="emailHelp">Including  yourself, your spouse, children, and any other dependents</small>
+                        <small class="form-text text-muted" id="medicaide-family-sizeHelp">Including  yourself, your spouse, children, and any other dependents</small>
                       </div>
                       <div class="form-group">
-                        <label for="medicaide-family-size">Whats your email address?</label>
+                        <label for="medicaide-email">Whats your email address?</label>
                         <input
                           class="form-control"
-                          id="medicaide-family-size"
+                          id="medicaide-email"
                           type="email"
                           name="email"
                           placeholder="Your email address"
                           required
                         >
-                        <small class="form-text text-muted" id="emailHelp">So we can send you a copy of your results and Medicaid updates for <?php the_title(); ?></small>
+                        <small class="form-text text-muted" id="medicaide-emailHelp ">So we can send you a copy of your results and Medicaid updates for <?php the_title(); ?></small>
                       </div>
                       <div class="text-center">
                         <button

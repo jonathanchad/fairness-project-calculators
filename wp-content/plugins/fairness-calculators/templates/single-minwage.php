@@ -221,6 +221,7 @@
                             placeholder="Your hourly wage in dollars"
                             required
                           >
+                          <small class="form-text text-muted" id="min-wage-hourlyHelp">Please use numbers only, do not include commas</small>
                         </div>
                       </div>
                       <div class="form-group"><label for="min-wage-tips">Do you receive tips as part of your job?</label>
@@ -258,7 +259,7 @@
                         <div class="input-group">
                           <input
                             class="form-control"
-                            id="min-wage-hourly"
+                            id="min-wage-hours"
                             type="number"
                             name="hours"
                             step="1"
@@ -271,13 +272,13 @@
                       <div class="form-group"><label for="medicaide-family-size">Whats your email address?</label>
                         <input
                           class="form-control"
-                          id="medicaide-family-size"
+                          id="min-wage-email"
                           type="email"
                           name="email"
                           placeholder="Your email address"
                           required
                         >
-                        <small class="form-text text-muted" id="emailHelp">So we can send you a copy of your results and minimum wage updates for <?php the_title(); ?></small>
+                        <small class="form-text text-muted" id="min-wage-emailHelp">So we can send you a copy of your results and minimum wage updates for <?php the_title(); ?></small>
                       </div>
                       <div class="text-center">
                         <button
