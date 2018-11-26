@@ -202,14 +202,14 @@
                   <div class="card-body text-left">
                     <form name="medicaid" method="post" action="">
                       <div class="form-group">
-                        <label for="medicaide-income">What is your annual family income?</label>
+                        <label for="medicaid-income">What is your annual family income?</label>
                         <div class="input-group">
                           <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                           </div>
                           <input
                             class="form-control"
-                            id="medicaide-income"
+                            id="medicaid-income"
                             type="number"
                             step="1"
                             name="income"
@@ -217,31 +217,31 @@
                             required
                           >
                         </div>
-                        <small class="form-text text-muted" id="medicaide-incomeHelp">Please use numbers only, do not include commas</small>
+                        <small class="form-text text-muted" id="medicaid-incomeHelp">Please use numbers only, do not include commas</small>
                       </div>
                       <div class="form-group">
-                        <label for="medicaide-family-size">How many people are in your family?</label>
+                        <label for="medicaid-family-size">How many people are in your family?</label>
                         <input
                           class="form-control"
-                          id="medicaide-family-size"
+                          id="medicaid-family-size"
                           type="number"
                           name="family-size"
                           placeholder="Number of people in your family"
                           required
                         >
-                        <small class="form-text text-muted" id="medicaide-family-sizeHelp">Including  yourself, your spouse, children, and any other dependents</small>
+                        <small class="form-text text-muted" id="medicaid-family-sizeHelp">Including  yourself, your spouse, children, and any other dependents</small>
                       </div>
                       <div class="form-group">
-                        <label for="medicaide-email">Whats your email address?</label>
+                        <label for="medicaid-email">Whats your email address?</label>
                         <input
                           class="form-control"
-                          id="medicaide-email"
+                          id="medicaid-email"
                           type="email"
                           name="email"
                           placeholder="Your email address"
                           required
                         >
-                        <small class="form-text text-muted" id="medicaide-emailHelp ">So we can send you a copy of your results and Medicaid updates for <?php the_title(); ?></small>
+                        <small class="form-text text-muted" id="medicaid-emailHelp ">So we can send you a copy of your results and Medicaid updates for <?php the_title(); ?></small>
                       </div>
                       <div class="text-center">
                         <button

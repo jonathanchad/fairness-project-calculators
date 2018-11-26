@@ -255,7 +255,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="min-wage-hourly">How many hours per week do you normally work? </label>
+                        <label for="min-wage-hours">How many hours per week do you normally work? </label>
                         <div class="input-group">
                           <input
                             class="form-control"
@@ -270,7 +270,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="medicaide-family-size">Whats your email address?</label>
+                        <label for="min-wage-email">Whats your email address?</label>
                         <input
                           class="form-control"
                           id="min-wage-email"
