@@ -216,8 +216,8 @@
                             placeholder="Annual income in Dollars"
                             required
                           >
-                          <small class="form-text text-muted" id="medicaide-incomeHelp">Please use numbers only, do not include commas</small>
                         </div>
+                        <small class="form-text text-muted" id="medicaide-incomeHelp">Please use numbers only, do not include commas</small>
                       </div>
                       <div class="form-group">
                         <label for="medicaide-family-size">How many people are in your family?</label>
