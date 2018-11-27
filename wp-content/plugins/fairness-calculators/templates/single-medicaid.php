@@ -154,6 +154,9 @@
       ?>
 
     <main>
+      <header class="bg-white text-center">
+        <div class="py-3"><a href="/"><img class="img-fluid mx-auto" src="https://www.thefairnessproject.org/wp-content/themes/fp/assets/img/logo-color.png" style="max-width: 280px"></a></div>
+      </header>
       <section>
         <div class="container">
           <div class="card main-content">
@@ -181,7 +184,7 @@
     </main>
     <footer class="bg-dark text-light">
       <div class="container py-5">
-        <div class="text-center mb-4"><a href="/"><img class="img-fluid mx-auto" src="https://www.thefairnessproject.org/wp-content/themes/fp/assets/img/logo-white.png" style="max-width: 300px"></a></div>
+        <div class="text-center mb-4"><a href="/"><img class="img-fluid mx-auto" src="https://www.thefairnessproject.org/wp-content/themes/fp/assets/img/logo-white.png" style="max-width: 280px"></a></div>
         <p>
           <p>In the last two years, we've worked state-by-state to expand Medicaid, bringing health care to more than 400 thousand people. For the price of a cup of coffee, you can help us expand this effort and secure health care for a million more people. Can you step up and make a monthly donation to fuel this work to change people's lives?</p>
         </p>
@@ -191,6 +194,9 @@
     } else {
         ?>
     <main>
+      <header class="bg-white text-center">
+        <div class="py-3"><a href="/"><img class="img-fluid mx-auto" src="https://www.thefairnessproject.org/wp-content/themes/fp/assets/img/logo-color.png" style="max-width: 280px"></a></div>
+      </header>
       <section>
         <div class="container">
           <div class="card main-content">
