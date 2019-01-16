@@ -58,6 +58,10 @@
   <body <?php body_class(); ?>>
 
     <div class="medicaid-single" tabindex="-1">
+		
+	<section class="head">
+		<img src="https://www.thefairnessproject.org/wp-content/uploads/2019/01/the-fairness-project-logo.png" alt="The Fairness Project" class="aligncenter">
+	</section>
 
   	<?php while (have_posts()) : the_post(); ?>
 
@@ -169,9 +173,9 @@
               <div class="card border-0">
                 <div class="card-body px-2 py-3 bg-special"><small class="d-block text-center mb-3 font-italic">If you’re logged in as an ActBlue Express user, your contribution will process immediately:</small>
                   <div class="d-flex flex-wrap">
+                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=3">Donate $3 per month</a></div>
                     <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=5">Donate $5 per month</a></div>
-                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=10">Donate $10 per month</a></div>
-                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=25">Donate $25 per month</a></div>
+                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=15">Donate $15 per month</a></div>
                     <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1">Or donate any other amount</a></div>
                     <div class="col-12 text-center"><a class="text-muted" href="<?php echo $donation_string; ?>">I'd like to make a one time donation</a></div>
                   </div>
@@ -186,7 +190,7 @@
       <div class="container py-5">
         <div class="text-center mb-4"><a href="/"><img class="img-fluid mx-auto" src="https://www.thefairnessproject.org/wp-content/themes/fp/assets/img/logo-white.png" style="max-width: 280px"></a></div>
         <p>
-          <p>In the last two years, we've worked state-by-state to expand Medicaid, bringing health care to more than 400 thousand people. For the price of a cup of coffee, you can help us expand this effort and secure health care for a million more people. Can you step up and make a monthly donation to fuel this work to change people's lives?</p>
+          <p>In the last two years, we've worked state-by-state to expand Medicaid, bringing health care to more than 400,000 people. For the price of a cup of coffee, you can help us expand this effort and secure health care for a million more people. Can you step up and make a monthly donation to fuel this work to change people's lives?</p>
         </p>
       </div>
     </footer>
@@ -208,7 +212,7 @@
                   <div class="card-body text-left">
                     <form name="medicaid" method="post" action="">
                       <div class="form-group">
-                        <label for="medicaid-income">What is your annual family income?</label>
+                        <label for="medicaid-income">What is your annual family income? (numbers only, do not include commas)</label>
                         <div class="input-group">
                           <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
@@ -223,7 +227,7 @@
                             required
                           >
                         </div>
-                        <small class="form-text text-muted" id="medicaid-incomeHelp">Please use numbers only, do not include commas</small>
+                        <!--<small class="form-text text-muted" id="medicaid-incomeHelp">Please use numbers only, do not include commas</small>-->
                       </div>
                       <div class="form-group">
                         <label for="medicaid-family-size">How many people are in your family?</label>
