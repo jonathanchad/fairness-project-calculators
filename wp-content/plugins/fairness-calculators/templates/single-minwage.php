@@ -152,9 +152,6 @@
         window.chartObj = <?php echo json_encode($salaryObj); ?>;
       </script>
       <main>
-      <header class="bg-white text-center">
-        <div class="py-3"><a href="/"><img class="img-fluid mx-auto" src="https://www.thefairnessproject.org/wp-content/themes/fp/assets/img/logo-color.png" style="max-width: 280px"></a></div>
-      </header>
       <section>
         <div class="container">
           <div class="card main-content">
