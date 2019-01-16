@@ -196,7 +196,7 @@
     <footer class="bg-dark text-light">
       <div class="container py-5">
         <div class="text-center mb-4"><a href="/"><img class="img-fluid mx-auto" src="https://www.thefairnessproject.org/wp-content/themes/fp/assets/img/logo-white.png" style="max-width: 280px"></a></div>
-        <p>In the last two years, we've worked state-by-state to increase the minimum wage for nearly 9 million people. We've won more than $6 billion in pay increases for working people and their families. For the price of a cup of coffee, you can help us expand this effort and raise the wages of millions more people. Can you step up and make a monthly donation to fuel this work to change people's lives?</p>
+        <p>In the last three years, we've worked state-by-state to increase the minimum wage for nearly 10 million people. We've won more than $7 billion in pay increases for working people and their families. For the price of a cup of coffee, you can help us expand this effort and raise the wages of millions more people. Can you step up and make a monthly donation to fuel this work to change people's lives?</p>
       </div>
     </footer>
     <?php
