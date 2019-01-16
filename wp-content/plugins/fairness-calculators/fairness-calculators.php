@@ -124,7 +124,7 @@ function send_medicaid_email($email, $template, $state, $income, $family_size, $
   $refcode_string = $refcode ? '&source='.$refcode : '';
   // Sends email to visitor
   $subject = 'Medicaid eligibility report | The Fairness Project';
-  $body = 'Thanks for signing up. <a href="https://thefairnessproject.org/medicaid/'.$state.'?income='.$income.'&family_size='.$family_size.$refcode_string.'">Here</a> is a link to your report page. <br>';
+  $body = 'Thanks for signing up. <a href="https://thefairnessproject.org/medicaid/'.$state.'?income='.$income.'&family_size='.$family_size.$refcode_string.'">Here</a> is a link to your report page. <br><br><a href="https://www.thefairnessproject.org"><strong>Learn more about The Fairness Project and how you can help.</strong></a></p>';
   $body .= $template;
 
   $headers = array('Content-Type: text/html; charset=UTF-8');
@@ -150,6 +150,7 @@ function send_minwage_email($params) {
     $body .=  '</div>';
     $body .=  '<div class="text-center mt-3">';
     $body .=  '  <p>Starting on ' . $params['starting_date'] . ', ' . $params['raise_year']. ' your wage will see its first increase settling in at <strong>$' . $params['first_raise'] . '/hr.</strong></p>';
+	$body .=  '<p><a href="https://www.thefairnessproject.org"><strong>Learn more about The Fairness Project and how you can help.</strong></a></p>';
     $body .=  '</div>';
   }
 
