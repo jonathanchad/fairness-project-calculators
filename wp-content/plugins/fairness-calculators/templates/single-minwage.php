@@ -40,6 +40,10 @@
   <body <?php body_class(); ?>>
 
     <div class="minwage-single" tabindex="-1">
+		
+	<section class="head">
+		<img src="https://www.thefairnessproject.org/wp-content/uploads/2019/01/the-fairness-project-logo.png" alt="The Fairness Project" class="aligncenter">
+	</section>
 
   	<?php while (have_posts()) : the_post(); ?>
 
@@ -176,9 +180,9 @@
               <div class="card border-0">
                 <div class="card-body px-2 py-3 bg-special"><small class="d-block text-center mb-3 font-italic">If you’re logged in as an ActBlue Express user, your contribution will process immediately:</small>
                   <div class="d-flex flex-wrap">
+                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=3">Donate $3 per month</a></div>
                     <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=5">Donate $5 per month</a></div>
-                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=10">Donate $10 per month</a></div>
-                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=25">Donate $25 per month</a></div>
+                    <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1&amount=15">Donate $15 per month</a></div>
                     <div class="col-12 col-sm-6 mb-2 px-2"><a class="act-blue-button" href="<?php echo $donation_string; ?>&recurring=1">Or donate any other amount</a></div>
                     <div class="col-12 text-center"><a class="text-muted" href="<?php echo $donation_string; ?>">I'd like to make a one time donation</a></div>
                   </div>
@@ -213,7 +217,7 @@
                 <div class="card border-0 bg-light">
                   <div class="card-body text-left">
                     <form name="calculate" method="post" action="">
-                      <div class="form-group"><label for="min-wage-hourly">What is your current hourly salary?</label>
+                      <div class="form-group"><label for="min-wage-hourly">What is your current hourly salary? (numbers only, do not include commas)</label>
                         <div class="input-group">
                           <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
@@ -228,7 +232,7 @@
                             required
                           >
                         </div>
-                        <small class="form-text text-muted" id="min-wage-hourlyHelp">Please use numbers only, do not include commas</small>
+                        <!--<small class="form-text text-muted" id="min-wage-hourlyHelp">Please use numbers only, do not include commas</small>-->
                       </div>
                       <div class="form-group"><label for="min-wage-tips">Do you receive tips as part of your job?</label>
                         <div class="pl-4" id="min-wage-tips">
@@ -312,5 +316,7 @@
     	<?php endwhile; // end of the loop.?>
 
     </div><!-- Container end -->
+	  
+	  <?php wp_footer(); ?>
   </body>
 </html>
