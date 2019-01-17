@@ -124,7 +124,7 @@ function send_medicaid_email($email, $template, $state, $income, $family_size, $
   $refcode_string = $refcode ? '&source='.$refcode : '';
   // Sends email to visitor
   $subject = 'Medicaid eligibility report | The Fairness Project';
-  $body = 'Thanks for signing up. <a href="https://thefairnessproject.org/medicaid/'.$state.'?income='.$income.'&family_size='.$family_size.$refcode_string.'">Here</a> is a link to your report page.<br><br><a href="https://www.thefairnessproject.org"><strong>Learn more about The Fairness Project and how you can help.</strong></a>';
+  $body = '<p>Thanks for signing up. <a href="https://thefairnessproject.org/medicaid/'.$state.'?income='.$income.'&family_size='.$family_size.$refcode_string.'">Here</a> is a link to your report page.<br><br><a href="https://www.thefairnessproject.org"><strong>Learn more about The Fairness Project and how you can help.</strong></a></p>';
   $body .= $template;
 
   $headers = array('Content-Type: text/html; charset=UTF-8');
@@ -141,7 +141,7 @@ function send_minwage_email($params) {
   $refcode_string = $params['refcode'] ? '&source='.$params['refcode'] : '';
   // Sends email to visitor
   $subject = 'Calculate your raise report | The Fairness Project';
-  $body = 'Thanks for signing up. <a href="https://thefairnessproject.org/min-wage/'.$params['state'].'?wage='.$params['wage'].'&tipped='.$params['tipped'].'&hours='.$params['hours'].$refcode_string.'">Here</a> is a link to your report page. <br>';
+  $body = '<p>Thanks for signing up. <a href="https://thefairnessproject.org/min-wage/'.$params['state'].'?wage='.$params['wage'].'&tipped='.$params['tipped'].'&hours='.$params['hours'].$refcode_string.'">Here</a> is a link to your report page.</p>';
   $body .= $params['content'];
   if ($params['total'] > 0) {
     $body .=  '<div class="highlight text-center">';
