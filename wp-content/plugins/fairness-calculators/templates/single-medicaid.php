@@ -269,5 +269,7 @@
     	<?php endwhile; // end of the loop.?>
 
     </div><!-- Container end -->
+
+	<?php wp_footer(); ?>
   </body>
 </html>
