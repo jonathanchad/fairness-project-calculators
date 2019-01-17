@@ -211,7 +211,7 @@
                 <div class="card border-0 bg-light">
                   <div class="card-body text-left">
                     <form name="calculate" method="post" action="">
-                      <div class="form-group"><label for="min-wage-hourly">What is your current hourly salary? (numbers only, do not include commas)</label>
+                      <div class="form-group"><label for="min-wage-hourly">What was your 2018 hourly salary? (numbers only, do not include commas)</label>
                         <div class="input-group">
                           <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
