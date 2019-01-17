@@ -60,7 +60,7 @@
     <div class="medicaid-single" tabindex="-1">
 		
 	<section class="head">
-		<img src="https://www.thefairnessproject.org/wp-content/uploads/2019/01/the-fairness-project-logo.png" alt="The Fairness Project" class="aligncenter">
+		<img src="https://www.thefairnessproject.org/wp-content/uploads/2019/01/the-fairness-project-logo.png" alt="The Fairness Project" class="aligncenter logo">
 	</section>
 
   	<?php while (have_posts()) : the_post(); ?>
@@ -195,9 +195,6 @@
     } else {
         ?>
     <main>
-      <header class="bg-white text-center">
-        <div class="py-3"><a href="/"><img class="img-fluid mx-auto" src="https://www.thefairnessproject.org/wp-content/themes/fp/assets/img/logo-color.png" style="max-width: 280px"></a></div>
-      </header>
       <section>
         <div class="container">
           <div class="card main-content">
